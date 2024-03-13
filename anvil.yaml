@@ -1,6 +1,48 @@
 allow_embedding: false
 package_name: Classic_1
+db_schema:
+  items:
+    client: none
+    server: full
+    columns:
+    - name: Name
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: Description
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: Price
+      admin_ui: {width: 200, order: 3}
+      type: number
+    title: Items
+  packages:
+    client: none
+    server: full
+    columns:
+    - name: Name
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: Description
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: Price
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: Items
+      admin_ui: {width: 200, order: 3}
+      type: link_multiple
+      target: items
+    title: Packages
+  quote:
+    client: none
+    server: full
+    columns: []
+    title: Quote
 name: Classic 1
+startup_form: Form1
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
-services: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
