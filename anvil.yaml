@@ -18,33 +18,39 @@ db_schema:
     client: none
     server: full
     columns:
-    - name: Name
-      admin_ui: {width: 200, order: 1}
+    - name: name
+      admin_ui: {order: 1, width: 200}
       type: string
-    - name: Description
-      admin_ui: {width: 200, order: 2}
+    - name: description
+      admin_ui: {order: 2, width: 200}
       type: string
-    - name: Price
-      admin_ui: {width: 200, order: 3}
+    - name: price
+      admin_ui: {order: 3, width: 200}
       type: number
+    - name: created
+      admin_ui: {width: 200, order: 4}
+      type: datetime
     title: Items
   packages:
     client: none
     server: full
     columns:
-    - name: Name
-      admin_ui: {width: 200, order: 0}
+    - name: name
+      admin_ui: {order: 0, width: 200}
       type: string
-    - name: Description
-      admin_ui: {width: 200, order: 1}
+    - name: description
+      admin_ui: {order: 1, width: 200}
       type: string
-    - name: Price
-      admin_ui: {width: 200, order: 2}
+    - name: price
+      admin_ui: {order: 2, width: 200}
       type: string
     - name: Items
       admin_ui: {width: 200, order: 3}
       type: link_multiple
       target: items
+    - name: created
+      admin_ui: {width: 200, order: 4}
+      type: datetime
     title: Packages
   quote:
     client: none
@@ -53,24 +59,27 @@ db_schema:
     - name: Name
       admin_ui: {width: 200, order: 0}
       type: string
-    - name: Description
-      admin_ui: {width: 200, order: 1}
+    - name: description
+      admin_ui: {order: 1, width: 200}
       type: string
-    - name: Client
-      admin_ui: {width: 200, order: 2}
+    - name: client
+      admin_ui: {order: 2, width: 200}
       type: string
-    - name: Packages
-      admin_ui: {width: 200, order: 3}
+    - name: packages
+      admin_ui: {order: 3, width: 200}
       type: link_multiple
       target: packages
-    - name: Items
-      admin_ui: {width: 200, order: 4}
+    - name: items
+      admin_ui: {order: 4, width: 200}
       type: link_multiple
       target: items
-    - name: DiscountType
-      admin_ui: {width: 200, order: 5}
+    - name: discountType
+      admin_ui: {order: 5, width: 200}
       type: string
-    - name: DiscountValue
-      admin_ui: {width: 200, order: 6}
+    - name: discountValue
+      admin_ui: {order: 6, width: 200}
       type: number
+    - name: created
+      admin_ui: {width: 200, order: 7}
+      type: datetime
     title: Quote
