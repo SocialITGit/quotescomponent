@@ -30,6 +30,9 @@ db_schema:
     - name: created
       admin_ui: {width: 200, order: 4}
       type: datetime
+    - name: image
+      admin_ui: {width: 200, order: 5}
+      type: media
     title: Items
   packages:
     client: none

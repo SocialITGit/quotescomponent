@@ -24,6 +24,15 @@ components:
     properties: {text: Prezzo, type: number, placeholder: 0.00 €}
     type: TextBox
     layout_properties: {grid_position: 'FACKQD,EPXYQS'}
+  - name: btnUploadImage
+    properties: {}
+    type: FileLoader
+    layout_properties: {grid_position: 'JHNUFR,EFFHOF'}
+    event_bindings: {change: btnUploadImage_change}
+  - name: imgPrimary
+    properties: {}
+    type: Image
+    layout_properties: {grid_position: 'MBOPAZ,PTZFET'}
   - name: lblPriceError
     properties: {text: Prezzo obbligatorio, bold: true}
     type: Label

@@ -13,5 +13,11 @@ def createItem(item):
     created=datetime.now(),
     name=item.name,
     description= item.description,
-    price=item.price
+    price=item.price,
+    image = item.image
   )
+
+
+@anvil.server.callable
+def findAllItems():
+  return app_tables.items.search()

@@ -1,0 +1,12 @@
+container: {type: ColumnPanel}
+components:
+- name: card_1
+  properties: {role: card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'RBKDBN,LFEKJO'}
+  components:
+  - name: lblName
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'RTSCUG,KGUJKR'}
+is_package: true

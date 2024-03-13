@@ -1,0 +1,34 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:single-column.html'}
+components:
+- type: ColumnPanel
+  properties: {}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: txtName
+    properties: {placeholder: Nome pacchetto}
+    type: TextBox
+    layout_properties: {grid_position: 'TBSZWQ,RWETRA'}
+  - name: txtDescription
+    properties: {}
+    type: TextArea
+    layout_properties: {grid_position: 'SEQPLW,VNWZDS'}
+  - name: txtPrice
+    properties: {placeholder: 0.00 €, type: number}
+    type: TextBox
+    layout_properties: {grid_position: 'VZHTUS,KICWYI'}
+  - name: repItems
+    properties: {item_template: Items.ViewCard}
+    type: RepeatingPanel
+    layout_properties: {grid_position: 'THBGGD,WCNGDA'}
+  - name: drdItems
+    properties: {}
+    type: DropDown
+    layout_properties: {grid_position: 'RCWDMN,RFIEGT'}
+  - name: btnAddItem
+    properties: {text: Aggiungi elemento +}
+    type: Button
+    layout_properties: {grid_position: 'LZZJRN,YIKNDI'}
