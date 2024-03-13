@@ -1,5 +1,18 @@
-allow_embedding: false
+dependencies:
+- dep_id: dep_0z627vjticuj
+  version: {dev: false}
+  resolution_hints: {app_id: CERGINDO5H7SRVTZ, name: FormValidationDependency, package_name: form_checker}
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+startup: {type: form, module: Items.Cretate}
 package_name: Classic_1
+allow_embedding: false
+name: Classic 1
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
+  server_spec: null}
+startup_form: null
 db_schema:
   items:
     client: none
@@ -61,12 +74,3 @@ db_schema:
       admin_ui: {width: 200, order: 6}
       type: number
     title: Quote
-startup: {type: form, module: Items.Cretate}
-name: Classic 1
-startup_form: null
-runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
-  server_spec: null}
-services:
-- source: /runtime/services/tables.yml
-  client_config: {}
-  server_config: {}
