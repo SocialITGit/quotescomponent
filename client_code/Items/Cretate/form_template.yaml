@@ -17,7 +17,7 @@ components:
     type: TextArea
     layout_properties: {grid_position: 'XDSJED,DTGYGK'}
   - name: txtPrice
-    properties: {text: Prezzo, type: number, placeholder: x.xx€}
+    properties: {text: Prezzo, type: number, placeholder: '0,00 €'}
     type: TextBox
     layout_properties: {grid_position: 'FACKQD,EPXYQS'}
   - name: btnCreate
