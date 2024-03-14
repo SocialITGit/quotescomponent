@@ -5,6 +5,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from ...Items.ViewCard import ViewCard
+from .. import Model
 
 class Create(CreateTemplate):
   def __init__(self, **properties):
@@ -19,3 +20,8 @@ class Create(CreateTemplate):
     self.selecteItems.append(item)
     self.repItems.items = self.selecteItems
     pass
+
+  def btnCreate_click(self, **event_args):
+      package = Model.Package(self.txtName.text, self.txtDescription.text, self.txtPrice.text, self.selecteItems)
+      anvil.server.call('createPackage', package)
+  pass

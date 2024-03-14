@@ -44,16 +44,16 @@ db_schema:
     - name: description
       admin_ui: {order: 1, width: 200}
       type: string
-    - name: price
-      admin_ui: {order: 2, width: 200}
-      type: string
-    - name: Items
-      admin_ui: {width: 200, order: 3}
+    - name: items
+      admin_ui: {order: 3, width: 200}
       type: link_multiple
       target: items
     - name: created
       admin_ui: {width: 200, order: 4}
       type: datetime
+    - name: price
+      admin_ui: {width: 200, order: 5}
+      type: number
     title: Packages
   quote:
     client: none
