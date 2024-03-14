@@ -6,7 +6,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: Items.Cretate}
+startup: {type: form, module: Packages.Create}
 package_name: Classic_1
 allow_embedding: false
 name: Classic 1

@@ -21,7 +21,7 @@ components:
     type: TextBox
     layout_properties: {grid_position: 'VZHTUS,KICWYI'}
   - name: repItems
-    properties: {item_template: Items.ViewCard}
+    properties: {item_template: Items.ViewCard, visible: false}
     type: RepeatingPanel
     layout_properties: {grid_position: 'THBGGD,WCNGDA'}
   - name: drdItems
@@ -32,3 +32,4 @@ components:
     properties: {text: Aggiungi elemento +}
     type: Button
     layout_properties: {grid_position: 'LZZJRN,YIKNDI'}
+    event_bindings: {click: btnAddItem_click}
