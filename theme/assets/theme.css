@@ -1,259 +1,837 @@
-body * {
-  box-sizing: border-box;
+/**
+ This CSS implements the Material Design look and feel for Anvil apps.
+ **/
+
+/* Stop panel-cols cutting off drop shadows */
+.anvil-panel-col {
+  padding-bottom: 10px;
+  margin-bottom: -10px;
 }
 
-body {
-  font-family: "Roboto";
-  margin: 0;
-  min-height: 100%;
-}
-
-body.anvil-show-banner #appGoesHere {
-    margin-top: 50px;
-    position: relative;
-}
-
-header {
-  font-family: "Roboto","Helvetica","Arial",sans-serif;
-  padding: 0px 40px;
-  min-height: 64px;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-between;
-  background: %color:Header Background%;
-}
-
-header>.title {
-  font-size: 20px;
-}
-
-header>.nav-links>span {
-  margin: 0 10px;
-  display: inline-block;
-  position: relative;
-  vertical-align: top;
-}
-
-.ribbon {
-  width: 100%;
-  height: 40vh;
-  background-color: %color:Accent 1%;
-}
-
-.body {
-  background-color: %color:Background%;
-}
-
-a, a:visited {
-  color: %color:Accent 1%;
-}
-
-a:hover, a:active, a:focus {
-  color: %color:Accent 2%; /* Material design: Teal 700 */
-}
-
-.placeholder {
-  padding: 5px;
-  border: 2px dashed #888;
-}
-
-.nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-
-  overflow-y: hidden;
-
-  text-transform: uppercase;
-  font-weight: bold;
-
-  box-shadow: 0 1px 3px #888;
-
-
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.nav-right {
-  float: right;
-  color: #333;
-}
-
-.nav-elt {
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 10px;
-  position: relative;
-}
-
-.nav-elt.placeholder {
-  margin-top: 5px;
-  opacity: 0.8;
+.content > .placeholder {
+  margin: 16px;
   color: #888;
+  font-size: 18px;
+  outline: 1px dotted;
+  padding: 16px;
+  text-align: center;
+}
+
+/* Put things on a 4px grid (none of this 7px nonsense) */
+.has-text .anvil-component-icon.left-icon { margin-right: 8px; }
+.has-text .anvil-component-icon.right-icon { margin-left: 8px; }
+
+a>.anvil-component-icon.left_edge-icon,
+a>.anvil-component-icon.right_edge-icon,
+.anvil-label>.anvil-component-icon.left_edge-icon,
+.anvil-label>.anvil-component-icon.right_edge-icon {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.anvil-label>.label-text, a>.link-text {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.file-loader>label {
+    padding: 8px;
+}
+.checkbox label, .radio label {
+    padding-top: 8px; padding-right: 8px; padding-bottom: 8px;
+}
+.anvil-spacing-above-none { margin-top: 0px; }
+.anvil-spacing-above-small { margin-top: 4px; }
+.anvil-spacing-above-medium { margin-top: 8px; }
+.anvil-spacing-above-large { margin-top: 16px; }
+.anvil-spacing-below-none { margin-bottom: 0px; }
+.anvil-spacing-below-small { margin-bottom: 4px; }
+.anvil-spacing-below-medium { margin-bottom: 8px; }
+.anvil-spacing-below-large { margin-bottom: 16px; }
+
+
+.col-padding.col-padding-tiny { padding: 0 2px; }
+.column-panel.col-padding-tiny > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -2px; }
+
+.col-padding.col-padding-small { padding: 0 4px; }
+.column-panel.col-padding-small > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -4px; }
+
+.col-padding.col-padding-medium { padding: 0 8px; }
+.column-panel.col-padding-medium > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -8px; }
+
+.col-padding.col-padding-large { padding: 0 12px; }
+.column-panel.col-padding-large > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -12px; }
+
+.col-padding.col-padding-huge { padding: 0 20px; }
+.column-panel.col-padding-huge > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -20px; }
+
+.flow-panel.flow-spacing-tiny > .flow-panel-gutter { margin: 0 -2px; }
+.flow-panel.flow-spacing-tiny > .flow-panel-gutter > .flow-panel-item { margin: 0 2px; }
+
+.flow-panel.flow-spacing-small > .flow-panel-gutter { margin: 0 -4px; }
+.flow-panel.flow-spacing-small > .flow-panel-gutter > .flow-panel-item { margin: 0 4px; }
+
+.flow-panel.flow-spacing-medium > .flow-panel-gutter { margin: 0 -8px; }
+.flow-panel.flow-spacing-medium > .flow-panel-gutter > .flow-panel-item { margin: 0 8px; }
+
+.flow-panel.flow-spacing-large > .flow-panel-gutter { margin: 0 -12px; }
+.flow-panel.flow-spacing-large > .flow-panel-gutter > .flow-panel-item { margin: 0 12px; }
+
+.flow-panel.flow-spacing-huge > .flow-panel-gutter { margin: 0 -20px; }
+.flow-panel.flow-spacing-huge > .flow-panel-gutter > .flow-panel-item { margin: 0 20px; }
+
+
+/* Typography */
+
+/*added Montserrat as default for simple website theme*/
+body {
+  font-family: Montserrat, Roboto, Noto, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.4286;
+  background-color: #292929;
+}
+
+@media print {
+  body {
+    background-color: white;
+  }
+}
+
+a, a:focus {
+  text-decoration: none;
+  color: %color:Primary 700%;
+}
+
+a:hover, a:active {
+  color: %color:Primary 500%;
+}
+
+.anvil-label {
+/*  font-size: 16px;*/
+}
+
+/*changed subheading and headline for simple website theme*/
+.anvil-role-subheading {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: %color:Primary 500%;
+}
+
+.anvil-role-headline {
+  font-size: 34px;
+  line-height: 32px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: %color:White%
+}
+
+.anvil-role-input-prompt {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.anvil-role-display-4 {
+  font-size: 112px;
+  font-weight: light;
+}
+
+.anvil-role-text {
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.anvil-role-text > .label-text, .anvil-role-text .link-text {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Page structure: App bar with optional left nav */
+.structure {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: calc(100vh - %anvil-banner-height%);
+  height: 0; /* To make flex-grow work in IE */
+}
+
+/* However, this breaks the designer's height measurement. IE isn't supported for the designer, so set it back. */
+.designer .structure {
+  height: initial;
+}
+
+.app-bar {
+  flex: 0 0;
+  flex-basis: auto;
+  flex-basis: content;
+}
+
+.nav-holder {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+/* Mobile and desktop margins for content */
+ .content > * > .anvil-container {
+  padding: 0px;
+}
+/*
+@media(min-width:991px) {
+  .content > * > .anvil-container {
+    padding: 16px 24px;
+  }
+} */
+ 
+.content .anvil-measure-this {
+  padding-bottom: 1px; /* Prevent margin collapse messing up embedding */
+}
+
+/* Allow overflows to show drop shadows in ColumnPanels
+   This can create unwanted scrollbars; we compensate for this at the top level with .nav-holder .content {overflow-x: hidden;}
+*/
+.anvil-container-overflow {
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
+
+/* Desktop: Nav bar pinned */
+
+.nav-holder {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-holder .left-nav {
+  position: relative;
+  flex-shrink: 0;
+  min-width: 160px;
+  max-width: 400px;
+}
+
+.nav-shield {
+  display: none;
+}
+
+/* Mobile: Nav bar is a modal overlay */
+
+@media(max-width:998px) {
+  html:not(.designer) .nav-holder {
+    display: block;
+  }
+  html:not(.designer) .nav-holder .left-nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: calc(100% - 56px);
+    max-width: 360px;
+    z-index: 3;
+    border-right: none;
+  /* 16dp */  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+
+    display: none;
+    transition: right 0.5s;
+  }
+  
+  html:not(.designer) .nav-holder .left-nav.shown {
+    display: block;
+  }
+  .nav-shield.shown {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.2);
+  }
+ }
+
+.nav-holder .left-nav, .left-nav-placeholder {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-right: 1px solid #e0e0e0;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0,0,0,0.87);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.left-nav-placeholder {
+  display: block;
+  padding: 8px;
+  line-height: 1;
+  width: 58px;
+}
+.left-nav-placeholder .prompt {
+  display: inline-block;
+  white-space: nowrap;
+  transform: translate(-50%,0) rotate(-90deg) translate(-50%,0) translate(15px,16px);
+  padding: 16px 16px;
+  color: #888;
+  outline: 1px dotted #888;
   visibility: hidden;
 }
-
-body.anvil-highlight .nav-elt.placeholder {
+.anvil-highlight .left-nav-placeholder .prompt {
   visibility: visible;
 }
 
-.nav-elt .drop-here {
-  position: absolute;
+.left-nav > .column-panel {
+  padding: 24px 0;
+}
+.left-nav > .column-panel > .anvil-panel-section > .anvil-panel-section-container:not(.full-width-row) {
+  margin: 0 16px;
+  width: initial;
+  max-width: initial;
+  overflow-x: visible;
+}
+.left-nav > .column-panel > .anvil-panel-section:first-child > .anvil-panel-section-container.full-width-row {
+  margin-top: -24px;
+}
+.left-nav > .column-panel > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter > .anvil-panel-row > .anvil-panel-col {
+  overflow-x: visible;
+}
+
+/* Make all the sidebar icons look nice */
+
+.left-nav .anvil-component-icon {
+  font-size: 160%;
+}
+
+.left-nav .anvil-component-icon.left-icon {
+  width: 0;
+  margin-right: 56px;
+  position: relative;
+  top: 0.15em;  
+}
+
+.left-nav .anvil-component-icon.left_edge-icon, .left-nav .anvil-component-icon.right_edge-icon {
+  left: 16px;
+  padding-top: 2px;
+  width: 0;
+}
+
+.left-nav .anvil-component-icon.right_edge-icon {
+  left: initial;
+  right: 16px;
   top: 0;
-  left: -7.5px;
-  bottom: 0;
-  width: 5px;
+  padding-top: 2px;
 }
 
-.anvil-role-title {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.designer .instructions {
-    padding: 24px 16px;
-    font-size: 14px;
-    text-align: center;
-    color: #666;
-}
-
-/* Give enough space for card drop-shadows */
-.cards > div > .column-panel > .anvil-panel-section > .anvil-panel-section-container {
-    padding: 0 5px;
-}
-
-.cards > .anvil-container {
-    outline: none !important;
-}
-
-.anvil-role-card,
-.designer .anvil-highlight .anvil-role-card {
-    background-color: white;
-    box-shadow: 1px 2px 4px #888;
-
-    font-weight: normal;
-    font-size: 14px;
-
-    outline: none;
-    padding: 15px 0;
-
-}
-  
-.anvil-role-card>.anvil-panel-section>.anvil-panel-section-container {
-    padding: 0 15px;
-}
-
-/* Responsive bits: Make the menu overlay the screen
-   (and hidden by default) rather than displacing it
-   on small screens
+/* Sidebar links (and labels with edge icons) go +16px wider
+   (Top-level columns in ColumnPanels get overflow-x visible [see above]to enable this)
 */
 
-@media(max-width:767px) {
-
-  .cards {
-    padding: 24px 0px;
-  }
-
+.left-nav a, .left-nav .anvil-label.left_edge-icon, .left-nav .anvil-label.right_edge-icon {
+  color: rgba(0,0,0,0.87);
+  margin: 0 -16px;
+  padding: 4px 16px;
 }
 
-.sidebar {
-    background-color: %color:Sidebar Background%;
-    color: white;
-    padding: 10px 0;
-    flex-shrink: 0;
-
-    overflow-y: auto;
-    overflow-x: hidden;
+.left-nav .anvil-component.left_edge-icon {
+  padding-left: 72px;
 }
 
-.nav {
-    flex: 0 0;
-    flex-basis: auto;
-    flex-basis: content;
+.left-nav a:hover, .left-nav .anvil-role-selected {
+  color: %color:Primary 700%;
+  background-color: rgba(0,0,0,.08);
+}
+
+.designer .nav-holder .left-nav {
+  min-width: 56px;
+}
+
+.designer .nav-holder .left-nav > .anvil-component {
+  min-width: 160px;
+}
+
+.nav-holder .left-nav > .anvil-component {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.nav-holder .content {
+  flex: 1;
+  overflow-x: hidden;
+}
+
+/* Components: App Bar */
+.app-bar {
+  min-height: 56px;
+  line-height: 40px;
+  padding: 0 16px 0 72px;
+
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  background-color: %color:Primary 500%;
   
-    z-index: 10;
-
-    position: relative;
-    background-color: white;
-    padding: 8px 16px 7px; /* expect 5px margin */
-    min-height: 62px;
-    font-size: 16px;
-    color: %color:Accent 1%;
+  z-index: 1;
+  /* 4dp  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);  */
 }
 
-.nav > .menu-btn {
-    color: %color:Sidebar Background%;
-    cursor: pointer;
-    width: 32px;
-    height: 32px;
-    border-radius: 16px;
-    padding: 5px;
-    margin-top: 7px;
-    text-align: center;
+.app-bar .anvil-component {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.app-bar > .sidebar-toggle { display:block; float:left;  margin-left: -61px; }
+.app-bar > .top-left-btn { float: left; margin-left: -60px; margin-right: -40px; }
+.app-bar > .title { float: left; }
+.app-bar > .title > .placeholder { outline: 1px dotted; padding-left: 16px; padding-right: 16px; margin: 8px 8px 0; display:none; }
+.app-bar > .app-bar-nav { float: right; font-weight: normal; }
+.app-bar > .app-bar-nav .placeholder { margin-top: 8px; padding: 0 8px; }
+.anvil-highlight .app-bar > .app-bar-nav .placeholder { outline: 1px dotted #ccc; }
+.anvil-highlight .app-bar > .title > .placeholder { display:block; }
+
+.app-bar a, .app-bar .anvil-component {
+  display: block;
+  color: white;
+  line-height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  margin: 5px 4px 0;
+}
+
+.app-bar .title .anvil-component {
+  margin-left: 0;
+}
+
+.app-bar input.anvil-component, .app-bar .anvil-component input {
+  line-height: 30px;
+  color: white;
+}
+
+.app-bar select.form-control {
+  height: 43px; /* 30px line height + 12px padding + 1px border */
+}
+
+.app-bar .anvil-component-icon-present .anvil-component-icon, .app-bar .sidebar-toggle .fa {
+  width: 30px;
+  text-align: center;
+}
+
+/* Don't put spacing on the top-level container (eg FlowPanel) */
+.app-bar-nav > .anvil-container {
+  margin: 0;
+  padding: 0;
+  min-height: 56px;
+}
+
+.anvil-highlight .app-bar-nav > .anvil-container:not(.has-components):not(a) {
+  outline: 1px dotted #fff;
+  margin-top: 8px;
+  min-height: 40px;
+  padding: 5px 8px;
+}
+
+.anvil-highlight .app-bar-nav > .anvil-container:not(.has-components):not(a)::after {  
+  content: "Drop Links here"
+}
+
+/* Rejig margin vs padding to give links the halo */
+.app-bar a, .app-bar a.anvil-component {
+  padding: 5px;
+  margin: 8px 0 0;
+  border-radius: 20px;
+}
+
+.app-bar a .link-text {
+  padding: 0 4px;
+}
+.app-bar a.has-text .anvil-component-icon.left {
+  margin-right: 4px;
+}
+.app-bar a.has-text .anvil-component-icon.right {
+  margin-left: 4px;
+}
+
+.app-bar a:hover, .app-bar a:active {
+  color: #eee; text-decoration: none;
+  background-color: %color:Primary 700%;
+}
+
+
+/* Component: Dialog (alert), Notification */
+.modal-content, body>div[data-notify="container"] {
+  border-radius: 2px;
+  /* 24dp */ box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2)
+    !important;
+}
+
+.modal-header {
+  padding: 24px 24px 0px;
+  font-size: 24px;
+  line-height: 32px;
+  border: 0;
+}
+
+.modal-body {
+  padding: 20px 24px 24px;
+  font-size: 16px;
+  color: black;
+}
+
+.modal-footer {
+  padding: 8px 8px 8px 24px;
+  border: 0;
+}
+
+.modal-footer .btn {
+  background-color: transparent;
+  color: %color:Primary 500%;
+}
+.modal-footer .btn, .modal-footer .btn:focus, .modal-footer .btn:active {
+  box-shadow: none;
+  top: 0;
+}
+
+/* Notifications */
+body>div[data-notify="container"] {
+  background: white;
+  border: none;
+  padding: 24px;
+}
+
+body>div[data-notify="container"]>span[data-notify="title"] {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333333;
+}
+
+body>div[data-notify="container"]>span[data-notify="message"] {
+  display: block;
+  padding: 20px 0 0;
+  font-size: 16px;
+  color: #747474;  
+}
+
+body>div[data-notify="container"].alert-success{
+  background-color: #d4edda;
+}
+
+body>div[data-notify="container"].alert-success>span[data-notify="title"]{
+  color: #155724;
+}
+
+body>div[data-notify="container"].alert-danger{
+  background-color: #f8d7da;
+}
+
+body>div[data-notify="container"].alert-danger>span[data-notify="title"]{
+  color: #721c24;
+}
+
+body>div[data-notify="container"].alert-warning{
+  background-color: #fff3cd;
+}
+
+body>div[data-notify="container"].alert-warning>span[data-notify="title"]{
+  color: #856404;
+}
+
+
+/* Component: Button */
+
+/* changed this for simple website theme */
+.btn, .btn-default, .file-loader>label {
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 16px;
+  min-height: calc(16px + 1.42857143em);
+/*   text-transform: uppercase; */
+
+  border: 0;
+  background-image: none;
+  background-color: transparent;
+  color: %color:Primary 500%;
+  text-shadow: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  
+  position: relative;
+}
+
+.btn:hover, .btn:focus, .file-loader>label:hover {
+  background-color: rgba(153,153,153,0.2);
+  background-image: none;
+  outline: none;
+  color: %color:Primary 500%;
+}
+
+.btn:active, .btn:active:focus {
+  background-color: rgba(153,153,153,0.4);
+  background-image: none;
+  outline: none;
+  box-shadow: none;
+  color: %color:Primary 500%;
+}
+
+.btn[disabled] { color: rgba(0, 0, 0, .25); }
+.anvil-role-raised > .btn[disabled], .anvil-role-primary-color > .btn[disabled], .anvil-role-secondary-color > .btn[disabled] {
+  background-color: rgba(0,0,0,0.12) !important;
+  color: rgba(0,0,0,0.25) !important;
+  box-shadow: none !important;
+}
+
+.anvil-role-raised > .btn, .anvil-role-primary-color > .btn, .anvil-role-secondary-color > .btn, .anvil-role-raised.file-loader>label, .anvil-role-primary-color.file-loader>label, .anvil-role-secondary-color.file-loader>label,
+.btn-primary, .btn-success, .btn-info, .btn-warning, .btn-danger
+{
+  /* 2dp */  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.anvil-role-raised > .btn:active, .anvil-role-primary-color > .btn:active, .anvil-role-secondary-color > .btn:active, .btn-primary:active,
+.btn-primary:active, .btn-success:active, .btn-info:active, .btn-warning:active, .btn-danger:active {
+  /* 8dp */ box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);  
+  top: -1px;
+}
+
+.anvil-role-primary-color > .btn, .btn-primary, .anvil-role-primary-color.file-loader>label {
+  color: white;
+  background-color: %color:Primary 500%;
+}
+
+.anvil-role-secondary-color > .btn, .anvil-role-secondary-color.file-loader>label {
+  color: white;
+  background-color: %color:Secondary 500%;
+}
+
+.btn-success, .btn-info, .btn-warning, .btn-danger {
+  color: white;
+}
+
+.anvil-role-primary-color > .btn:hover, .anvil-role-primary-color > .btn:active, .anvil-role-primary-color > .btn:focus,
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+  color: white;
+  background-color: %color:Primary 700%;
+}
+
+.anvil-role-secondary-color > .btn:hover, .anvil-role-secondary-color > .btn:active, .anvil-role-secondary-color > .btn:focus {
+  color: white;
+  background-color: %color:Secondary 700%;
+}
+
+/* Component: Card */
+
+.anvil-role-card {
+  overflow: hidden;
+  background-color: white;
+  border-radius: 2px;
+  padding: 40px 12px; /* upped the top and bottom padding for theme */
+  /* 2dp */ /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); */
+}
+
+/* full_width_row sections go full bleed */
+.column-panel.anvil-role-card > .anvil-panel-section > .anvil-panel-section-container.full-width-row {
+  margin-left: -12px;
+  margin-right: -12px;
+  width: initial;
+  max-width: initial;
+}
+
+/* If the first row of a card is a full_width_row, it goes to the top */
+.column-panel.anvil-role-card > .anvil-panel-section:first-child > .anvil-panel-section-container.full-width-row {
+  margin-top: -8px;
+}
+.column-panel.anvil-role-card > .anvil-panel-section:last-child > .anvil-panel-section-container.full-width-row {
+  margin-bottom: -8px;
 }
 
 
 
-/* From https://fonts.googleapis.com/css?family=Roboto */
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v16/ek4gzZ-GeXAPcSbHtCeQI_esZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+/* Component: TextBox + TextArea */
+
+input.anvil-component, textarea.anvil-component, .anvil-component select, .anvil-datepicker input {
+  font-size: 18px;
+  line-height: 1.5;
+  border: 2px solid %color:Primary 500% !important;
+  border-radius: 10px;
+  background-color: transparent;
+  color: rgba(0,0,0,0.87);
+  
+  box-shadow: none;
 }
-/* cyrillic */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v16/mErvLBYg_cXG3rLvUsKT_fesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+
+.anvil-dropdown {
+  font-size: 16px;
 }
-/* greek-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v16/-2n2p-_Y08sg57CNWQfKNvesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
-  unicode-range: U+1F00-1FFF;
+.anvil-component select {
+  font-size: inherit;
 }
-/* greek */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v16/u0TOpm082MNkS5K0Q4rhqvesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
-  unicode-range: U+0370-03FF;
+
+input.anvil-component, .anvil-component select, .anvil-datepicker input {
+  padding: 4px 8px;
+  border: 0;
+/*   border-bottom: 1px solid rgba(0,0,0,0.42); */
+
+  transition: border-bottom 0.2s, padding-bottom 0.2s;
+  -moz-transition: none; /* Firefox is jumpy, so disable transitions */
 }
-/* vietnamese */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v16/NdF9MtnOpLzo-noMoG0miPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+
+textarea.anvil-component {
+  padding: 4px 8px; 
+  transition: border 0.2s, padding 0.2s;
+  -moz-transition: none; /* Firefox is jumpy, so disable transitions */
 }
-/* latin-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v16/Fcx7Wwv8OzT71A3E1XOAjvesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+
+.anvil-dropdown select.form-control {
+  
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 4px 8px;
+  
+  /* ew ew ew - select elements are weird and don't obey line-height, so we just
+     set the height explicitly. Ugh. */
+  height: calc(1.5em + 13px); /* 8px + 4px padding + 1px border = 13px */
 }
-/* latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v16/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+
+.anvil-dropdown {
+  position: relative;
 }
+/* Select arrow styling - changed for simple website theme*/
+.anvil-dropdown form:before {
+    content: "\25BC";
+    position: absolute;
+    right: 0;
+    font-size: 80%;
+    line-height: calc(1.8em + 8px);
+    color: %color:Primary 500%;
+    pointer-events:none;
+    padding: 4px 4px;
+}
+
+.anvil-component select, .anvil-datepicker input { margin-bottom: 0px; } /*changed*/
+input.anvil-component.anvil-spacing-below-none { margin-bottom: 4px; }
+input.anvil-component.anvil-spacing-below-small { margin-bottom: 8px; }
+input.anvil-component.anvil-spacing-below-medium { margin-bottom: 12px; }
+input.anvil-component.anvil-spacing-below-large { margin-bottom: 20px; }
+
+input.anvil-component::-webkit-input-placeholder, textarea.anvil-component::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.54);
+}
+input.anvil-component::-moz-placeholder, textarea.anvil-component::-moz-placeholder {
+  color: rgba(0,0,0,0.54);
+}
+input.anvil-component::placeholder, textarea.anvil-component::placeholder  {
+  color: rgba(0,0,0,0.54);
+}
+
+.app-bar input.anvil-component::-webkit-input-placeholder, .app-bar textarea.anvil-component::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.8);
+}
+.app-bar input.anvil-component::-moz-placeholder, .app-bar textarea.anvil-component::-moz-placeholder {
+  color: rgba(255,255,255,0.8);
+}
+.app-bar input.anvil-component::placeholder, .app-bar textarea.anvil-component::placeholder  {
+  color: rgba(255,255,255,0.8);
+}
+
+/* input.anvil-component:hover, .anvil-component select:hover, .anvil-datepicker input:hover {   
+	border-bottom: 2px solid rgba(0,0,0,.87);
+   	padding-bottom: 3px;
+} */
+
+/* input.anvil-component:focus, .anvil-component select:focus, .anvil-datepicker input:focus {
+   border-bottom: 2px solid %color:Primary 700%;
+  padding-bottom: 3px;
+  box-shadow: none;
+} */
+
+input.anvil-component[disabled], .anvil-component select[disabled], .anvil-datepicker input[disabled] {
+  border-bottom: 1px dashed #888;
+  padding-bottom: 4px;
+  background-color: transparent;
+}
+
+/* textarea.anvil-component:hover {
+  border: 2px solid rgba(0,0,0,0.87);
+  padding: 3px 7px;
+}
+
+textarea.anvil-component:focus {
+  border: 2px solid %color:Primary 700%;
+  padding: 3px 7px;
+  box-shadow: none;
+} */
+
+textarea.anvil-component[disabled] {
+  border: 1px dashed #888;
+  padding: 4px 8px;
+  background-color: transparent;
+}
+
+.daterangepicker td.active {
+  background-color: %color:Primary 500%;
+}
+
+.daterangepicker td.active:hover {
+  background-color: %color:Primary 700%;
+}
+
+.daterangepicker .btn-success {
+  color: %color:Primary 500%;
+}
+
+/* Component: CheckBox, RadioButton */
+/* Ugh. These are definitely TODO right now. */
+
+.checkbox, .radio {
+  font-size: 16px;
+}
+
+/* Shadow values taken from 
+https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-material-design-elevations
+*/
+
+
+.anvil-role-home-header {
+   background-image: linear-gradient(180deg, %color:Primary 500% 100%, #5396BC00 350%); 
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 15em;
+}
+
+
+.anvil-role-start-header {
+  background-image: linear-gradient(180deg, %color:Primary 500% 0%, #5396BC00 150%), url(_/theme/start-img.jpg);
+/*   background-size: 100% auto; */
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 15em;
+}
+
+.anvil-role-top-border {
+  border-top: 2px solid %color:Primary 500%;
+}
+
+.anvil-role-rounded-border {
+  border: 2px solid %color:Primary 500% !important;
+  border-radius: 10px !important;
+}
+
+.anvil-role-confirmation {
+  background-color: black;
+  color: white;
+  font-size: 22px;
+}
+
+/* Alert popup container */
+.anvil-role-alert-popup {
+/* Alert popup container */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px; /* You can adjust the width as needed */
+  margin: 0 auto; /* Center the popup horizontally */
+  color: black; /* Text color for both title and content */
+}
+
+.anvil-role-page-break {
+  page-break-after:always;
+} 
