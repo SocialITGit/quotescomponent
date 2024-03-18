@@ -16,7 +16,7 @@ class Cretate(CretateTemplate):
     self.validator.require_text_field(self.txtPrice, self.lblPriceError)
     
 
-  def btnCreate_click(self, **event_args):
+  def button_create_click(self, **event_args):
     if self.validator.is_valid():
       item = Model.Item(self.txtName.text, self.txtDescription.text, self.txtPrice.text, self.imgPrimary.source)
       anvil.server.call('createItem', item)
@@ -26,6 +26,6 @@ class Cretate(CretateTemplate):
     
   pass
 
-  def btnUploadImage_change(self, file, **event_args):
+  def button_upload_image_change(self, file, **event_args):
     self.imgPrimary.source = file
     pass

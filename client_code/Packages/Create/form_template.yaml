@@ -8,33 +8,38 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components:
-  - name: txtName
-    properties: {placeholder: Nome pacchetto}
-    type: TextBox
-    layout_properties: {grid_position: 'TBSZWQ,RWETRA'}
-  - name: txtDescription
-    properties: {}
-    type: TextArea
-    layout_properties: {grid_position: 'SEQPLW,VNWZDS'}
-  - name: txtPrice
-    properties: {placeholder: 0.00 €, type: number}
-    type: TextBox
-    layout_properties: {grid_position: 'VZHTUS,KICWYI'}
-  - name: repItems
-    properties: {item_template: Items.ViewCard, visible: true}
-    type: RepeatingPanel
-    layout_properties: {grid_position: 'THBGGD,WCNGDA'}
-  - name: drdItems
-    properties: {}
-    type: DropDown
-    layout_properties: {grid_position: 'RCWDMN,RFIEGT'}
-  - name: btnAddItem
-    properties: {text: Aggiungi elemento +}
-    type: Button
-    layout_properties: {grid_position: 'LZZJRN,YIKNDI'}
-    event_bindings: {click: btnAddItem_click}
-  - name: btnCreate
-    properties: {text: Crea pacchetto}
-    type: Button
-    layout_properties: {grid_position: 'WPHJIE,VHCHNS'}
-    event_bindings: {click: btnCreate_click}
+  - name: card_1
+    properties: {role: card}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'DKDNFI,WTYLHA'}
+    components:
+    - name: txtName
+      properties: {placeholder: Nome pacchetto}
+      type: TextBox
+      layout_properties: {grid_position: 'ZNWLDX,YEHGKE'}
+    - name: txtDescription
+      properties: {}
+      type: TextArea
+      layout_properties: {grid_position: 'AOJJNN,PYEVHC'}
+    - name: txtPrice
+      properties: {placeholder: 0.00 €, type: number}
+      type: TextBox
+      layout_properties: {grid_position: 'WCTSKV,DIHNXD'}
+    - name: repItems
+      properties: {item_template: Items.ViewCard, visible: true}
+      type: RepeatingPanel
+      layout_properties: {grid_position: 'NLWGIM,ERPROL'}
+    - name: drdItems
+      properties: {}
+      type: DropDown
+      layout_properties: {grid_position: 'ACSEUV,VPPRBR'}
+    - name: btnAddItem
+      properties: {text: Aggiungi elemento +}
+      type: Button
+      layout_properties: {grid_position: 'NIDCJC,DQNMWJ'}
+      event_bindings: {click: btnAddItem_click}
+    - name: btnCreate
+      properties: {text: Crea pacchetto}
+      type: Button
+      layout_properties: {grid_position: 'ZQHBOG,LEQXWQ'}
+      event_bindings: {click: btnCreate_click}
