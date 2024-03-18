@@ -8,7 +8,7 @@ from datetime import datetime
 
 
 @anvil.server.callable
-def createItem(item):
+def create_item(item):
   app_tables.items.add_row(
     created=datetime.now(),
     name=item.name,
@@ -19,5 +19,5 @@ def createItem(item):
 
 
 @anvil.server.callable
-def findAllItems():
+def find_all_items():
   return app_tables.items.search()

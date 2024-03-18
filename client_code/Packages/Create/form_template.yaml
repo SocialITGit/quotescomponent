@@ -13,33 +13,33 @@ components:
     type: ColumnPanel
     layout_properties: {grid_position: 'DKDNFI,WTYLHA'}
     components:
-    - name: txtName
+    - name: text_box_name
       properties: {placeholder: Nome pacchetto}
       type: TextBox
       layout_properties: {grid_position: 'ZNWLDX,YEHGKE'}
-    - name: txtDescription
+    - name: text_area_description
       properties: {}
       type: TextArea
       layout_properties: {grid_position: 'AOJJNN,PYEVHC'}
-    - name: txtPrice
+    - name: text_box_price
       properties: {placeholder: 0.00 €, type: number}
       type: TextBox
       layout_properties: {grid_position: 'WCTSKV,DIHNXD'}
-    - name: repItems
+    - name: repeating_panel_items
       properties: {item_template: Items.ViewCard, visible: true}
       type: RepeatingPanel
       layout_properties: {grid_position: 'NLWGIM,ERPROL'}
-    - name: drdItems
+    - name: drop_down_items
       properties: {}
       type: DropDown
       layout_properties: {grid_position: 'ACSEUV,VPPRBR'}
-    - name: btnAddItem
+    - name: button_add_item
       properties: {text: Aggiungi elemento +}
       type: Button
       layout_properties: {grid_position: 'NIDCJC,DQNMWJ'}
-      event_bindings: {click: btnAddItem_click}
-    - name: btnCreate
+      event_bindings: {click: button_add_item_click}
+    - name: button_create_package
       properties: {text: Crea pacchetto}
       type: Button
       layout_properties: {grid_position: 'ZQHBOG,LEQXWQ'}
-      event_bindings: {click: btnCreate_click}
+      event_bindings: {click: button_create_package_click}

@@ -7,7 +7,7 @@ from datetime import datetime
 
 
 @anvil.server.callable
-def createPackage(package):
+def create_package(package):
   app_tables.packages.add_row(
     created=datetime.now(),
     name=package.name,
