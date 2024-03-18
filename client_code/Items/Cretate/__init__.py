@@ -18,7 +18,8 @@ class Cretate(CretateTemplate):
 
   def button_create_click(self, **event_args):
     if self.validator.is_valid():
-      item = Model.Item(self.text_box_name.text, self.text_area_description.text, self.text_box_price.text, self.image_primary.source)
+      user =  anvil.server.call('find_davide') 
+      item = Model.Item(self.text_box_name.text, self.text_area_description.text, self.text_box_price.text, self.image_primary.source, user)
       anvil.server.call('create_item', item)
       
     else:

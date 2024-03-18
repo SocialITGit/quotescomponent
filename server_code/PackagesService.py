@@ -13,5 +13,6 @@ def create_package(package):
     name=package.name,
     description= package.description,
     price=package.price,
-    items = package.items
+    items = package.items,
+    user= package.user
   )

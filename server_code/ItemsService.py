@@ -15,10 +15,15 @@ def create_item(item):
     description= item.description,
     price=item.price,
     image = item.image,
-    user = 'davide.lissoni@socialit.it'
+    user = item.user
   )
 
 
 @anvil.server.callable
 def find_all_items():
   return app_tables.items.search()
+
+
+@anvil.server.callable
+def find_items_by_user(user):
+  return app_tables.items.search(user=user)

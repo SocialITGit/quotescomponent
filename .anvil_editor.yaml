@@ -11,6 +11,7 @@ unique_ids:
   server_modules:
     ItemsService: '1710324021887862442625160.8289'
     PackagesService: '1710347080966703653680831.6644'
+    UsersService: '1710777040917824735353711.0544'
   assets:
     dashboard.html: RS6KMG5KO7JHU3U47RZMUEYXHUDESMUG
     single-column.html: Q3DZPRF7FDJS6VUTWPZNX7PZNVQ6QDUL
