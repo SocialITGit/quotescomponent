@@ -14,7 +14,8 @@ def create_item(item):
     name=item.name,
     description= item.description,
     price=item.price,
-    image = item.image
+    image = item.image,
+    user = 'davide.lissoni@socialit.it'
   )
 
 

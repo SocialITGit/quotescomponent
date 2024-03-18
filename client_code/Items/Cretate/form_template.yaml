@@ -7,43 +7,43 @@ components:
   properties: {}
   name: content_panel
   layout_properties: {slot: default}
+  components: []
+- name: card_item
+  properties: {role: card, visible: true}
+  type: ColumnPanel
+  layout_properties: {slot: title}
   components:
-  - name: card_item
-    properties: {role: card}
-    type: ColumnPanel
-    layout_properties: {grid_position: 'CULJEQ,EABERZ'}
-    components:
-    - name: text_box_name
-      properties: {text: '', placeholder: Nome}
-      type: TextBox
-      layout_properties: {grid_position: 'BGWOZF,CHTFVJ'}
-    - name: label_name_error
-      properties: {text: Nome obbligatorio, visible: true, bold: true}
-      type: Label
-      layout_properties: {grid_position: 'DCELMZ,AVBLSB'}
-    - name: text_area_description
-      properties: {text: '', placeholder: Descrizione oggetto}
-      type: TextArea
-      layout_properties: {grid_position: 'FBMQWN,DHMCNQ'}
-    - name: text_box_price
-      properties: {text: Prezzo, type: number, placeholder: 0.00 €}
-      type: TextBox
-      layout_properties: {grid_position: 'FNXKMO,OAYLJZ'}
-    - name: label_price_error
-      properties: {text: Prezzo obbligatorio, bold: true}
-      type: Label
-      layout_properties: {grid_position: 'CYGIXO,TXNGEJ'}
-    - name: button_upload_image
-      properties: {}
-      type: FileLoader
-      layout_properties: {grid_position: 'JPCPKT,RNVYSL'}
-      event_bindings: {change: button_upload_image_change}
-    - name: image_primary
-      properties: {}
-      type: Image
-      layout_properties: {grid_position: 'NXQDPL,HBWXNI'}
-    - name: button_create
-      properties: {text: Inserisci nuovo oggetto}
-      type: Button
-      layout_properties: {grid_position: 'ELAECR,QLDGUC'}
-      event_bindings: {click: button_create_click}
+  - name: text_box_name
+    properties: {text: '', placeholder: Nome, align: left}
+    type: TextBox
+    layout_properties: {grid_position: 'BGWOZF,CHTFVJ'}
+  - name: label_name_error
+    properties: {text: Nome obbligatorio, visible: true, bold: true}
+    type: Label
+    layout_properties: {grid_position: 'DCELMZ,AVBLSB'}
+  - name: text_area_description
+    properties: {text: '', placeholder: Descrizione oggetto}
+    type: TextArea
+    layout_properties: {grid_position: 'FBMQWN,DHMCNQ'}
+  - name: text_box_price
+    properties: {text: Prezzo, type: number, placeholder: 0.00 €}
+    type: TextBox
+    layout_properties: {grid_position: 'FNXKMO,OAYLJZ'}
+  - name: label_price_error
+    properties: {text: Prezzo obbligatorio, bold: true}
+    type: Label
+    layout_properties: {grid_position: 'CYGIXO,TXNGEJ'}
+  - name: button_upload_image
+    properties: {}
+    type: FileLoader
+    layout_properties: {grid_position: 'JPCPKT,RNVYSL'}
+    event_bindings: {change: button_upload_image_change}
+  - name: image_primary
+    properties: {}
+    type: Image
+    layout_properties: {grid_position: 'NXQDPL,HBWXNI'}
+  - name: button_create
+    properties: {text: Inserisci nuovo oggetto}
+    type: Button
+    layout_properties: {grid_position: 'ELAECR,QLDGUC'}
+    event_bindings: {click: button_create_click}
