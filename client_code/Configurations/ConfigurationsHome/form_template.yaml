@@ -20,5 +20,5 @@ components:
   - name: configuration_card_4
     properties: {}
     type: form:Configurations.ConfigurationCard
-    layout_properties: {row: QGPSWE, width_xs: 3, col_xs: 1}
+    layout_properties: {row: QGPSWE, width_xs: 1, col_xs: 1}
 is_package: true
