@@ -6,7 +6,7 @@ components:
 - name: configuration_card
   properties: {role: card}
   type: ColumnPanel
-  layout_properties: {grid_position: 'JXONGP,YTBIBN', full_width_row: true}
+  layout_properties: {grid_position: 'JXONGP,YTBIBN'}
   components:
   - name: grid_panel_1
     properties: {}
