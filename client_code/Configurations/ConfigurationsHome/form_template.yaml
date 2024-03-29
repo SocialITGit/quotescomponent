@@ -1,8 +1,12 @@
 container: {type: ColumnPanel}
 components:
 - name: grid_panel_1
-  properties: {background: 'theme:Header Background'}
+  properties: {}
   type: GridPanel
-  layout_properties: {grid_position: 'YOJABS,VOXAPO'}
-  components: []
+  layout_properties: {grid_position: 'VFLTZK,INUJQS'}
+  components:
+  - name: configuration_card_1
+    properties: {}
+    type: form:Configurations.ConfigurationCard
+    layout_properties: {row: YDWREI, width_xs: 8, col_xs: 2}
 is_package: true

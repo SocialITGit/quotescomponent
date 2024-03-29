@@ -2,6 +2,7 @@ container:
   type: ColumnPanel
   data_bindings:
   - {property: item, code: 'self.item['''']', writeback: false}
+  properties: {col_widths: '{"YTBIBN":60}'}
 components:
 - name: configuration_card
   properties: {role: card}
@@ -18,12 +19,13 @@ components:
       type: Image
       layout_properties: {row: ECSAMO, width_xs: 1, col_xs: 1}
     - name: label_title
-      properties: {text: Title}
+      properties: {text: fdfddf}
       type: Label
       layout_properties: {row: ECSAMO, width_xs: 6, col_xs: 2}
     - name: rich_text_description
-      properties: {}
+      properties: {content: ffdfd}
       type: RichText
       layout_properties: {row: NCOQRH, width_xs: 11, col_xs: 1}
   data_bindings: []
 is_package: true
+custom_component: false

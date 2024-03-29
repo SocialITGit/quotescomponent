@@ -6,7 +6,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: Packages.Create}
+startup: {type: form, module: Configurations.ConfigurationsHome}
 package_name: ConfigComponent
 allow_embedding: false
 name: ConfigComponent
